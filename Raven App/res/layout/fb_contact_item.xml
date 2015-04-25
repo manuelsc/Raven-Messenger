@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/LinearLayout1"
+    android:layout_width="match_parent"
+    android:layout_height="60dp"
+    android:orientation="horizontal"
+    android:background="@android:color/transparent" >
+
+    <!-- icon -->
+
+    <ImageView
+        android:id="@+id/profile_picture"
+        android:layout_width="54dp"
+        android:layout_height="54dp"
+        android:layout_marginBottom="3dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="13dp"
+        android:layout_marginTop="3dp"
+        android:src="@drawable/ic_social_group" />
+
+    <!-- title -->
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center|center_horizontal|fill_horizontal"
+        android:orientation="vertical" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="22sp"
+            android:orientation="horizontal" >
+
+            <!-- #424242 --> 
+            <TextView
+                android:id="@+id/textTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:textColor="#474747" 
+                android:text="Papa"
+                android:textSize="17sp"
+                android:textStyle="bold" />
+
+
+            <ImageView
+                android:id="@+id/encryptedIcon"
+                android:layout_width="18dp"
+                android:layout_height="18dp"
+                android:src="@drawable/ic_message_encrypted_dark" />
+
+ 		<LinearLayout
+ 		    android:layout_width="match_parent"
+ 		    android:layout_height="match_parent"
+ 		    android:gravity="right"
+ 		    android:layout_marginTop="2dp"
+ 		    android:orientation="horizontal" >
+
+            <TextView
+                android:id="@+id/textDate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Fr"
+                android:layout_marginRight="4dp"
+                android:textColor="#636363" />
+            
+            <ImageView
+                android:id="@+id/online_handy"
+                android:layout_width="12dp"
+                android:layout_height="12dp"
+                android:layout_marginTop="4dp"
+                android:layout_marginRight="10dp"
+                android:gravity="right"
+                
+                android:src="@drawable/offline"
+                 />
+		 </LinearLayout>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal" >
+          
+
+        <com.rockerhieu.emojicon.EmojiconTextView
+            android:id="@+id/textLastMessage"
+            android:layout_width="wrap_content"
+            android:layout_height="19dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginRight="36dp"
+            android:text="Yolo swag und so"
+            android:textColor="#636363" />
+         </LinearLayout>
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/item_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="18sp" />
+
+    <!-- counter -->
+
+    <Space
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+</LinearLayout>

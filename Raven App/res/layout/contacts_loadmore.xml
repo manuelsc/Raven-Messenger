@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?><LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/LinearLayout1"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:gravity="right"
+    android:paddingTop="-5dp"
+    android:background="@android:color/transparent"
+    android:orientation="horizontal" >
+
+
+   
+    <LinearLayout
+        android:id="@+id/wrapper"
+        android:layout_width="fill_parent"
+        android:gravity="right"
+        android:layout_height="wrap_content" >
+        
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/rectangle_border_top"
+            android:gravity="center"
+            android:minHeight="45dp"
+            android:orientation="vertical" >
+<FrameLayout
+		    android:layout_width="match_parent"
+		    android:layout_height="match_parent">
+            <ImageView
+                android:id="@+id/title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:src="@drawable/ic_action_navigation_expand_more" />
+            <FrameLayout
+		    android:id="@+id/progressbar"
+		    android:layout_width="match_parent"
+		    android:visibility="gone"
+		    android:layout_height="match_parent">
+            <ProgressBar
+		        android:layout_width="wrap_content"
+		        android:layout_height="wrap_content"
+		        android:layout_gravity="center"
+		        android:indeterminate="true" />
+		</FrameLayout>
+		</FrameLayout>
+        </LinearLayout>
+
+
+</LinearLayout>
+</LinearLayout>

@@ -1,0 +1,190 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:emojicon="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/linearlayout_root_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+   <LinearLayout
+        android:layout_width="match_parent"
+        android:background="#F1F1F1"
+        android:paddingBottom="@dimen/activity_vertical_margin"
+	    android:paddingLeft="@dimen/activity_horizontal_margin"
+	    android:paddingRight="@dimen/activity_horizontal_margin"
+	    android:paddingTop="@dimen/activity_horizontal_margin"
+        android:layout_height="match_parent" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/rectangle_fb_login"
+       		android:gravity="center"
+            android:orientation="vertical" >
+
+              <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:background="@drawable/rectangle_mail_login_top"
+                android:orientation="vertical" >
+
+                <TextView
+                    android:id="@+id/title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="22dp"
+                    android:text="e-mail"
+                    android:textColor="#FFFFFF"
+                    android:layout_marginBottom="10dp"
+                    android:textSize="48sp"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+
+            <com.gc.materialdesign.views.ScrollView 
+                android:id="@+id/scrollView1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:scrollbarStyle="insideOverlay" >
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:orientation="vertical" >
+
+                    <EditText
+                        android:id="@+id/email"
+                        android:layout_width="270dp"
+                        android:layout_height="38dp"
+                        android:layout_marginBottom="16dp"
+                        android:layout_marginTop="25dp"
+                        android:background="@drawable/rectangle_border_bottom2"
+                        android:ems="10"
+                        android:hint="E-Mail"
+                        android:inputType="textEmailAddress"
+                        android:paddingLeft="10dp"
+                        android:textColor="#212121"
+                        android:textColorHint="#bdbdbd" >
+
+                        <requestFocus />
+                    </EditText>
+
+                    <EditText
+                        android:id="@+id/password"
+                        android:layout_width="270dp"
+                        android:layout_height="38dp"
+                       android:layout_marginBottom="16dp"
+                        android:background="@drawable/rectangle_border_bottom2"
+                        android:ems="10"
+                        android:hint="Password"
+                        android:inputType="textPassword"
+                        android:paddingLeft="10dp"
+                        android:textColor="#212121"
+                        android:textColorHint="#bdbdbd" />
+
+                    <RadioGroup
+                        android:id="@+id/radioGroup"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="16dp"
+                        android:layout_marginTop="25dp"
+                        android:gravity="center"
+                         android:visibility="gone"
+                        android:orientation="horizontal" >
+
+                        <RadioButton
+                            android:id="@+id/radioButtonPop3"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="POP3" />
+
+                        <RadioButton
+                            android:id="@+id/radioButtonImap"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="45dp"
+                            android:text="IMAP" />
+                    </RadioGroup>
+
+                    <EditText
+                        android:id="@+id/host"
+                         android:layout_width="270dp"
+                        android:layout_height="38dp"
+                        android:layout_marginBottom="16dp"
+                        android:background="@drawable/rectangle_border_bottom2"
+                        android:ems="10"
+                        android:hint="Host"
+                        android:paddingLeft="10dp"
+                        android:textColor="#212121"
+                        android:visibility="gone"
+                        android:textColorHint="#bdbdbd" />
+
+                    <EditText
+                        android:id="@+id/port"
+                       android:layout_width="270dp"
+                        android:layout_height="38dp"
+                        android:layout_marginBottom="16dp"
+                        android:background="@drawable/rectangle_border_bottom2"
+                        android:ems="10"
+                        android:hint="Port - Default: 993 IMAP/995 POP3"
+                        android:inputType="number"
+                        android:paddingLeft="10dp"
+                        android:textColor="#212121"
+                        android:visibility="gone"
+                        android:textColorHint="#bdbdbd" />
+
+                    <EditText
+                        android:id="@+id/smtphost"
+                       android:layout_width="270dp"
+                        android:layout_height="38dp"
+                        android:layout_marginBottom="16dp"
+                        android:background="@drawable/rectangle_border_bottom2"
+                        android:ems="10"
+                        android:hint="SMTP Host"
+                        android:paddingLeft="10dp"
+                        android:textColor="#212121"
+                        android:visibility="gone"
+                        android:textColorHint="#bdbdbd" />
+
+                    <EditText
+                        android:id="@+id/smtpport"
+                         android:layout_width="270dp"
+                        android:layout_height="38dp"
+                        android:layout_marginBottom="16dp"
+                        android:background="@drawable/rectangle_border_bottom2"
+                        android:ems="10"
+                        android:hint="SMTP Port - Default: 587"
+                        android:inputType="number"
+                        android:paddingLeft="10dp"
+                        android:textColor="#212121"
+                        android:textColorHint="#bdbdbd"
+                        android:visibility="gone" />
+
+                    <!-- @drawable/rectangle_button_mail -->
+                    <com.gc.materialdesign.views.ButtonRectangle
+                        android:id="@+id/login_button"
+                        android:layout_width="270dp"
+                        android:layout_height="50dp"
+                        android:layout_marginBottom="25dp"
+                        android:layout_marginTop="10dp"
+                        android:background="#FF6F00"
+                        android:text="Login"
+                        android:textColor="#FFFFFF"
+                        android:textSize="15sp"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
+            </com.gc.materialdesign.views.ScrollView >
+
+            <!-- Extended View -->
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>

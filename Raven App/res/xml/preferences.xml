@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android" 
+    android:background="#FFFFFF"
+    android:key="main_screen">
+	 
+    <PreferenceCategory android:title="@string/settings_settings_tab" >
+        
+        <!--  -->
+        <Preference android:title="@string/sub_notifications" android:key="open_sub_notification"></Preference>
+        
+        <Preference 
+            android:title="@string/settings_default_sms" 
+            android:key="open_settings_default_sms"
+            android:summary="@string/settings_default_sms_sum" />
+        
+        <ListPreference
+            android:key="profile_picture_from"
+            android:entries="@array/profile_picture_from"
+            android:summary="@string/settings_profile_picture_from_sum"
+            android:entryValues="@array/profile_picture_from_values"
+            android:defaultValue="1"
+            android:title="@string/settings_profile_picture_from" />
+        
+        <EditTextPreference
+		    android:defaultValue="@string/username"
+		    android:dialogTitle="@string/settings_username"
+		    android:inputType="text"
+		    android:key="username"
+		    android:summary="@string/settings_username_sum"
+		    android:title="@string/settings_username" />
+        
+        <SwitchPreference
+   			android:key="advanced_key_share"
+   			android:defaultValue="false"
+    	 	android:title="@string/settings_advanced_key_share" />
+        
+    </PreferenceCategory>
+    <!--   <PreferenceCategory android:title="@string/settings_security_tab" >
+        
+       <Preference
+        android:key="change_pw"
+        android:title="@string/settings_change_key"
+        android:summary="@string/settings_change_key_sum">
+        <intent
+             android:action="android.intent.action.VIEW"
+             android:targetPackage="at.flack"
+             android:parentActivityName="at.flack.MainActivity"
+             android:targetClass="at.flack.activity.RegisterActivity" />         
+   		 </Preference> 
+		
+    </PreferenceCategory> -->
+    
+     <PreferenceCategory android:title="@string/settings_facebook_tab" >
+         
+         <SwitchPreference
+   			 android:key="send_seen"
+   			 android:defaultValue="true"
+    	 	android:title="@string/settings_facebook_send_seen" 
+    	 	android:summary="@string/settings_facebook_send_seen_sum"/>
+         
+           <Preference
+                android:key="delete_img_cache"
+			    android:title="@string/settings_facebook_delete_cache"
+    			android:summary="@string/settings_facebook_delete_cache_sum">
+  			</Preference>
+  			<Preference
+  			    android:key="fb_logout"
+			    android:title="@string/settings_facebook_logout"
+    			android:summary="@string/settings_facebook_logout_sum">
+  			</Preference>
+  		
+    </PreferenceCategory> 
+    
+      <PreferenceCategory android:title="@string/settings_mail_tab" >
+         
+           <Preference
+                android:key="mail_logout"
+			    android:title="@string/settings_mail_logout"
+    			android:summary="@string/settings_mail_logout_sum">
+  			</Preference>
+  			
+  		
+    </PreferenceCategory> 
+</PreferenceScreen>

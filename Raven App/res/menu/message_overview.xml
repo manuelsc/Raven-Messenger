@@ -1,0 +1,36 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android" 
+	xmlns:app="http://schemas.android.com/apk/res-auto" >
+    <item android:id="@+id/action_message_encrypted"
+          android:icon="@drawable/ic_action_message_encrypted_light"
+          android:title="@string/ic_action_message_encrypted"
+          app:showAsAction="always" />
+    
+     <item android:id="@+id/action_qr"
+          android:icon="@drawable/ic_action_device_access_accounts"
+          android:title="@string/action_qr"
+          app:showAsAction="always" />
+     
+     <item android:id="@+id/action_phone_number"
+          android:icon="@drawable/ic_action_device_access_call"
+          android:title="@string/ic_action_device_access_call"
+          app:showAsAction="always" />
+     
+      <item android:id="@+id/action_mail_reply"
+          android:icon="@drawable/ic_action_content_reply"
+          android:title="@string/ic_action_content_reply"
+          app:showAsAction="always" />
+   
+    
+     <item
+        android:id="@+id/action_key_information"
+        android:orderInCategory="100"
+        android:showAsAction="never"
+        android:title="@string/action_key_information"/>
+     
+    <!--  <item
+        android:id="@+id/action_settings"
+        android:orderInCategory="100"
+        android:showAsAction="never"
+        android:title="@string/action_settings"/>-->
+
+</menu>

@@ -1,0 +1,13 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android" 
+	xmlns:app="http://schemas.android.com/apk/res-auto" >
+    <item android:id="@+id/action_message_encrypted"
+          android:icon="@drawable/ic_action_message_encrypted_light"
+          android:title="@string/ic_action_message_encrypted"
+          app:showAsAction="always" />
+    
+     <item android:id="@+id/sendMail"
+          android:icon="@drawable/ic_action_content_send_white"
+          android:title="@string/action_send_mail"
+          app:showAsAction="always" />
+
+</menu>

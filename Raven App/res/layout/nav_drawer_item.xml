@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="48dp"
+    android:background="@drawable/activated_background"
+    > <!-- android:background="#F3F3F3" -->
+ 
+     <!-- icon -->
+     <ImageView
+         android:id="@+id/item_picture_profiles"
+         android:layout_width="32dp"
+         android:layout_height="32dp"
+         android:layout_alignParentLeft="true"
+         android:layout_marginLeft="8dp"
+         android:layout_marginRight="8dp"
+         android:layout_marginTop="8dp"
+         android:src="@drawable/activated_icon"
+         />
+ 
+    <!-- title -->
+    <TextView
+         android:id="@+id/item_title"
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         android:layout_toRightOf="@+id/item_picture_profiles"
+         android:layout_alignBaseline="@+id/item_counter"
+         android:textColor="@color/activated_textcolor"
+         android:textSize="18sp" />
+ 
+        <!-- counter -->
+        <TextView
+            android:id="@+id/item_counter"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="8dp"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/rectangle"
+            android:gravity="center"
+            android:textColor="#FFFFFF"
+            android:textSize="12sp"
+            android:textStyle="bold" />
+        
+            <!--  divider -->
+    <View
+        android:id="@+id/nav_divider"
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:layout_alignParentBottom="true"
+        android:background="#DADADC" ></View>
+ 
+</RelativeLayout>

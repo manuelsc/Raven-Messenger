@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/LinearLayout1"
+    android:layout_width="match_parent"
+    android:layout_height="80dp"
+    android:layout_marginTop="8dp"
+    android:layout_marginBottom="8dp"
+    android:orientation="horizontal"
+    android:background="#FFFFFF" >
+
+    <!-- icon -->
+
+    <ImageView
+        android:id="@+id/profile_picture"
+        android:layout_width="54dp"
+        android:layout_height="54dp"
+        android:layout_marginBottom="3dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="13dp"
+        android:layout_marginTop="15dp"
+        
+        android:src="@drawable/ic_social_person" />
+
+    <!-- title -->
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center|center_horizontal|fill_horizontal"
+        
+        android:orientation="vertical" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="22sp"
+            android:orientation="horizontal" >
+
+            <TextView
+                android:id="@+id/textTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Google"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:textColor="#474747"
+                android:textSize="17sp"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:id="@+id/encryptedIcon"
+                android:layout_width="25dp"
+                android:layout_height="20dp"
+                android:src="@drawable/ic_message_encrypted_dark" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/to_mail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="10dp"
+            android:gravity="left"
+            android:text="an mich"
+            android:textColor="#636363" />
+        
+        <TextView
+            android:id="@+id/textDate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="10dp"
+            android:gravity="left"
+            android:text="13:09"
+            android:textColor="#636363" />
+
+
+    </LinearLayout>
+
+ 
+
+    <!-- counter -->
+
+    <Space
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+</LinearLayout>

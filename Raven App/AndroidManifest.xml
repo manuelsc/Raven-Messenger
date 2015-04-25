@@ -1,0 +1,266 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="at.flack"
+    android:versionCode="15"
+    android:versionName="1.1504241" >
+
+    <!-- 14 -->
+    <uses-sdk
+        android:minSdkVersion="16"
+        android:targetSdkVersion="21" />
+    
+
+    <uses-permission android:name="android.permission.READ_CONTACTS" />
+    <uses-permission android:name="android.permission.READ_SMS" />
+    <uses-permission android:name="android.permission.WRITE_SMS" />
+    <uses-permission android:name="android.permission.SEND_SMS" />
+    <uses-permission android:name="android.permission.RECEIVE_SMS" />
+    <uses-permission android:name="android.permission.NFC" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
+    <application
+        android:allowBackup="true"
+        android:hardwareAccelerated="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:largeHeap="true"
+        android:theme="@style/BlueCustomTheme"
+         android:name="at.flack.GoogleAnalyticsTrack"  >
+        <meta-data android:name="com.google.android.gms.version"
+           android:value="@integer/google_play_services_version" />
+        <activity
+            android:name=".MainActivity"
+            android:configChanges="keyboardHidden|orientation"
+            android:launchMode="singleTop"
+            android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+
+        </activity>
+        <activity
+            android:name=".activity.NewSMSContactActivity"
+            android:configChanges="keyboardHidden|orientation"
+            android:label="@string/title_activity_new_message"
+            android:parentActivityName=".MainActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:resource="@xml/searchable"
+                android:value="at.flack.MainActivity" />
+        </activity>
+         <activity
+            android:name=".activity.NewFbContactActivity"
+            android:configChanges="keyboardHidden|orientation"
+            android:label="@string/title_activity_new_message"
+            android:parentActivityName=".MainActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:resource="@xml/searchable"
+                android:value="at.flack.MainActivity" />
+        </activity>
+        <activity
+            android:name=".activity.MessageOverview"
+            android:configChanges="keyboardHidden|orientation"
+            android:label="@string/title_activity_message_overview"
+            android:parentActivityName=".MainActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="at.flack.MainActivity" />
+        </activity>
+        <activity
+            android:name=".activity.FbMessageOverview"
+            android:configChanges="keyboardHidden|orientation"
+            android:label="@string/title_activity_message_overview"
+            android:parentActivityName=".MainActivity"
+            android:windowSoftInputMode="stateHidden" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="at.flack.MainActivity" />
+
+          
+        </activity>
+        <activity
+            android:name=".activity.NFCActionBarActivity"
+            android:configChanges="keyboardHidden|orientation"
+            android:label="@string/title_activity_message_overview"
+            android:parentActivityName=".MainActivity"
+            android:windowSoftInputMode="stateHidden" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="at.flack.MainActivity" />
+
+          
+        </activity>
+        <activity
+            android:name=".activity.QRActivity"
+            android:label="@string/title_activity_qr"
+            android:parentActivityName=".MainActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="at.flack.MainActivity" />
+           <intent-filter>
+                <action android:name="android.nfc.action.NDEF_DISCOVERED" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+
+                <data android:mimeType="application/vnd.com.example.android.beam" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="at.flack.activity.QRCreator"
+            android:configChanges="keyboardHidden|orientation"
+            android:label="@string/title_activity_qr_erstellen"
+            android:parentActivityName=".activity.QRActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="at.flack.intents.QRActivity" />
+        </activity>
+        <activity
+            android:name="at.flack.activity.QRReader"
+            android:configChanges="keyboardHidden|orientation"
+            android:label="@string/title_activity_qr_lesen"
+            android:parentActivityName=".activity.QRActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="at.flack.intents.QRActivity" />
+        </activity>
+        <activity
+            android:name=".activity.DebugActivity"
+            android:configChanges="keyboardHidden|orientation"
+            android:parentActivityName=".MainActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="at.flack.MainActivity" />
+        </activity>
+        <activity
+            android:name=".activity.QuickPrefsActivity"
+            android:parentActivityName=".MainActivity"
+            android:screenOrientation="portrait"
+    		android:configChanges="keyboardHidden|orientation|screenSize"
+            android:theme="@style/QuickPrefsTheme" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="at.flack.MainActivity" />
+
+            <intent-filter>
+                <action android:name="at.flack.activity.RegisterActivity" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+
+        <receiver android:name=".receiver.SmsReceiver" 
+              android:permission="android.permission.BROADCAST_SMS"> 
+            <intent-filter>
+                <action android:name="android.provider.Telephony.SMS_RECEIVED" />
+            </intent-filter>
+            <intent-filter>
+               <action android:name="android.provider.Telephony.SMS_DELIVER" />
+            </intent-filter>       
+               
+        </receiver>
+
+        <receiver android:name="receiver.MmsReceiver"
+            android:permission="android.permission.BROADCAST_WAP_PUSH">
+            <intent-filter>
+                <action android:name="android.provider.Telephony.WAP_PUSH_DELIVER" />
+                <data android:mimeType="application/vnd.wap.mms-message" />
+            </intent-filter>
+        </receiver>
+        
+        <receiver android:name=".receiver.FacebookReceiver" 
+            android:protectionLevel="signature">
+            <intent-filter>
+                <action android:name="at.flack.receiver.FacebookReceiver" />
+            </intent-filter>
+        </receiver>
+        
+        <receiver android:name=".receiver.EMailReceiver" 
+            android:protectionLevel="signature">
+            <intent-filter>
+                <action android:name="at.flack.receiver.EMailReceiver" />
+            </intent-filter>
+        </receiver>
+        
+        <receiver
+            android:name=".receiver.BootReceiver"
+            android:enabled="true"
+            android:exported="false" >
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+            </intent-filter>
+        </receiver>
+
+        <activity
+            android:name=".activity.LoginActivity"
+            android:label="@string/title_activity_login"
+            android:noHistory="true" >
+        </activity>
+        <activity
+            android:name=".activity.RegisterActivity"
+            android:label="@string/title_activity_register" >
+        </activity>
+        <activity
+            android:name=".activity.KeyInformationActivity"
+            android:label="@string/title_activity_key_information"
+            android:launchMode="singleTop" >
+        </activity>
+        <activity
+            android:name=".activity.NewMailActivity"
+            android:label="@string/title_activity_new_mail"
+            android:launchMode="singleTop" >
+        </activity>
+        <activity
+            android:name=".activity.MailOverview"
+            android:configChanges="keyboardHidden|orientation"
+            android:label="@string/title_activity_message_overview"
+            android:parentActivityName=".MainActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="at.flack.MainActivity" />
+
+        </activity>
+
+        <service android:name="at.flack.services.FacebookService" >
+        </service>
+        <service android:name="at.flack.services.EMailService" >
+        </service>
+        
+        <activity
+            android:name="at.flack.activity.SMSDefaultDelivery"
+            android:label="@string/title_activity_smsdefault_delivery" >
+			<intent-filter>
+                <action android:name="android.intent.action.SEND" />     
+                <action android:name="android.intent.action.VIEW" />               
+                <action android:name="android.intent.action.SENDTO" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+                <data android:scheme="sms" />
+                <data android:scheme="smsto" />
+                <data android:scheme="mms" />
+                <data android:scheme="mmsto" />
+            </intent-filter>
+        </activity>
+
+        <service android:name=".HeadlessSmsSendService"
+                 android:permission="android.permission.SEND_RESPOND_VIA_MESSAGE"
+                 android:exported="true" >
+            <intent-filter>
+                <action android:name="android.intent.action.RESPOND_VIA_MESSAGE" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <data android:scheme="sms" />
+                <data android:scheme="smsto" />
+                <data android:scheme="mms" />
+                <data android:scheme="mmsto" />
+            </intent-filter>
+        </service>
+    </application>
+
+</manifest>

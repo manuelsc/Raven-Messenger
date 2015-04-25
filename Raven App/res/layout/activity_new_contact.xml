@@ -1,0 +1,59 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:emojicon="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/linearlayout_root_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <include layout="@layout/toolbar"/>
+<FrameLayout
+  android:layout_width="match_parent"
+  android:layout_height="match_parent">
+ <RelativeLayout 
+    android:background="#F2F2F2"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+   
+
+    tools:context=".NewSMSContactActivity" >  
+
+<!-- xmlns:android="http://schemas.android.com/apk/res/android" -->
+<ListView 
+    android:id="@+id/listview"
+    android:layout_width="wrap_content"
+    android:divider="@drawable/listview_line_inset"
+    android:dividerHeight="5.0dp"
+    android:layout_height="wrap_content" /> 
+
+
+</RelativeLayout> 
+<FrameLayout
+    android:id="@+id/search_big"
+    android:layout_width="fill_parent"
+    android:visibility="gone"
+    android:layout_height="fill_parent">
+        <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:src="@drawable/ic_search_big" />
+</FrameLayout>
+<FrameLayout
+    android:id="@+id/load_screen"
+    android:layout_width="fill_parent"
+    android:visibility="gone"
+    android:layout_height="fill_parent">
+        <ProgressBar
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:indeterminate="true" />
+</FrameLayout>
+
+   <View
+            android:layout_width="match_parent"
+            android:layout_height="4dp"
+            android:background="@drawable/toolbar_dropshadow" />
+</FrameLayout>
+</LinearLayout>

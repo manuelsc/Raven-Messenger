@@ -1,0 +1,80 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+       xmlns:fab="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF"
+
+    android:orientation="vertical" >
+<include layout="@layout/toolbar"/>
+        <FrameLayout
+  android:layout_width="match_parent"
+  android:layout_height="match_parent">
+
+   <LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+     android:orientation="vertical"
+    android:background="#FFFFFF">
+            
+ <EditText
+     android:id="@+id/send_to"
+     android:layout_width="match_parent"
+     android:layout_height="wrap_content"
+     android:layout_marginTop="16dp"
+     android:ems="10"
+     android:paddingLeft="10dp"
+     android:paddingRight="10dp"
+     android:paddingTop="5dp"
+     android:paddingBottom="5dp"
+     android:hint="@string/mail_new_send_to"
+     android:background="#00000000"
+     android:inputType="textEmailAddress" >
+
+     <requestFocus />
+ </EditText>
+ 
+ <View
+    android:layout_width="fill_parent"
+    android:layout_height="1.5dp"
+    android:background="?android:attr/listDivider"/>
+
+ <EditText
+     android:id="@+id/subject"
+     android:layout_width="match_parent"
+     android:layout_height="wrap_content"
+     android:layout_marginTop="16dp"
+     android:ems="10"
+     android:background="#00000000"
+     android:paddingLeft="10dp"
+     android:paddingRight="10dp"
+     android:paddingTop="5dp"
+     android:paddingBottom="5dp"
+     android:hint="@string/mail_new_subject" />
+
+ <View
+    android:layout_width="fill_parent"
+    android:layout_height="1.5dp"
+    android:background="?android:attr/listDivider"/>
+ 
+ <EditText
+     android:id="@+id/body"
+     android:layout_width="match_parent"
+     android:gravity="top"
+     android:layout_height="match_parent"
+     android:layout_marginTop="16dp"
+     android:ems="10"
+     android:background="#00000000"
+     android:paddingLeft="10dp"
+     android:paddingRight="5dp"
+     android:paddingTop="5dp"
+     android:paddingBottom="10dp"
+     android:hint="@string/mail_new_body"
+     android:inputType="textMultiLine" />
+ </LinearLayout>
+    <View
+            android:layout_width="match_parent"
+            android:layout_height="4dp"
+            android:background="@drawable/toolbar_dropshadow" />
+</FrameLayout>
+</LinearLayout>

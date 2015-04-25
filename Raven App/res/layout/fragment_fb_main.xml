@@ -1,0 +1,88 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+       xmlns:fab="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+ <RelativeLayout 
+    android:background="#FFFFFF"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+   
+
+    tools:context=".NewSMSContactActivity" >  
+
+<!-- xmlns:android="http://schemas.android.com/apk/res/android" -->
+<android.support.v4.widget.SwipeRefreshLayout  
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/swipe_container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+<ListView 
+    android:id="@+id/listview"
+    android:layout_width="wrap_content"
+    android:divider="@drawable/listview_line_inset"
+    android:dividerHeight="5.0dp"
+    android:layout_height="wrap_content" /> 
+        </android.support.v4.widget.SwipeRefreshLayout>  
+    
+<FrameLayout
+    android:id="@+id/load_screen"
+    android:layout_width="fill_parent"
+    android:visibility="gone"
+    android:layout_height="fill_parent">
+        <ProgressBar
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:indeterminate="true" />
+</FrameLayout>
+
+ <com.melnykov.fab.FloatingActionButton
+            android:id="@+id/fab"
+            android:layout_width="wrap_content"
+            android:layout_alignParentRight="true"
+       		 android:layout_alignParentBottom="true"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|right"
+            android:layout_marginRight="22dp"
+      	  	android:layout_marginBottom="22dp"
+            android:src="@drawable/ic_action_content_add"
+            fab:fab_colorNormal="@color/primary"
+            fab:fab_colorPressed="@color/primary_pressed"
+            fab:fab_colorRipple="@color/ripple" />
+
+
+
+ <FrameLayout
+    android:id="@+id/nothing_found"
+    android:layout_width="fill_parent"
+    android:visibility="gone"
+    android:layout_height="fill_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:orientation="vertical" >
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_action_report_problem" />
+
+            <TextView
+                android:id="@+id/textView1"
+                android:layout_marginTop="7dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#99323232"
+                android:textSize="16dp"
+                android:text="@string/snackbar_cannot_load_fb_contacts" />
+
+        </LinearLayout>
+
+</FrameLayout>
+</RelativeLayout> 
+</LinearLayout>

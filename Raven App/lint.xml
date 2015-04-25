@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<lint>
+    <issue id="ContentDescription" severity="ignore" />
+    <issue id="InlinedApi">
+        <ignore path="src/at/flack/receiver/EMailReceiver.java" />
+        <ignore path="src/at/flack/receiver/FacebookReceiver.java" />
+        <ignore path="src/at/flack/receiver/SmsReceiver.java" />
+    </issue>
+    <issue id="MissingTranslation">
+        <ignore path="res/values/arrays.xml" />
+    </issue>
+    <issue id="NewApi" severity="ignore" />
+    <issue id="ValidFragment" severity="ignore" />
+</lint>

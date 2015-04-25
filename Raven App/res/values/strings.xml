@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Raven</string>
+    <string name="drawer_open">Raven 1</string>
+    <string name="drawer_close">Raven 2</string>
+    <string name="username">Me</string>
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_qr">Initiate encryption</string>
+    <string name="title_activity_message_overview">MessageOverview</string>
+    <string name="popup_addkey_dialog">Cancel</string>
+    <string name="popup_addkey_cancel">Cancel</string>
+    <string name="popup_addkey_confirm">Confirm</string>
+    <string name="action_qr">QR code</string>
+    <string name="title_activity_qr_lesen">Scan QR code</string>
+    <string name="title_activity_qr_erstellen">Create QR code</string>
+    <string name="ic_action_message_encrypted">Encrypted</string>
+    <string name="qr_erstellen_info">This QR code needs to be scanned by your communication partner.</string>
+    <string name="popup_keyalreadymapped_title">Overwrite key?</string>
+    <string name="popup_keyalreadymapped_message">A key has already been mapped to the partner given. Do you want to overwrite it? ATTENTION: All encrypted messages exchanged with this person so far will be lost!</string>
+    <string name="action_delete_keys">Delete key</string>
+    <string name="action_destroy_comm">Destroy communication</string>
+    <string name="settings_profile_picture_from">Profile picture</string>
+    <string name="settings_profile_picture_from_sum">Your profile picture will be downloaded from the platform chosen.</string>
+    <string name="settings_security_tab">Security</string>
+    <string name="settings_settings_tab">Settings</string>
+    <string name="sub_notifications">Notifications</string>
+    <string name="settings_facebook_tab">Facebook</string>
+    <string name="settings_mail_tab">E-mail</string>
+    <string name="settings_send_crash_report">Send crash report</string>
+    <string name="settings_theme">Theme</string>
+    <string name="settings_theme_sum">Change the applications appearance.</string>
+    <string name="settings_facebook_send_seen">Send "Seen"</string>
+    <string name="settings_facebook_send_seen_sum">Informs your communication partner of whether you have already seen the message.</string>
+    <string name="settings_facebook_logout">Log out</string>
+    <string name="settings_facebook_delete_cache">Empty picture cache</string>
+    <string name="settings_facebook_logout_sum">Log out from your Facebook account.</string>
+    <string name="settings_mail_logout_sum">Log out from your E-mail account.</string>
+    <string name="settings_facebook_delete_cache_sum">All profile pictures downloaded from Facebook will be locally removed and downloaded again.</string>
+    <string name="settings_sms_notifications">SMS</string>
+    <string name="settings_fb_notifications">Facebook</string>
+    <string name="settings_vibration">Vibration</string>
+    <string name="noti_light">LED</string>
+    <string name="noti_light_sum">Select a color in which the notification LED will flash when a message has been received.</string>
+    <string name="title_activity_login">Login</string>
+    <string name="title_activity_register">Password</string>
+    <string name="settings_change_key">Change password</string>
+    <string name="settings_change_key_sum">Change password</string>
+    <string name="settings_username">Display name</string>
+    <string name="settings_username_sum">This name will be displayed in the navigation bar.</string>
+    <string name="sms_receiver_new_encrypted">New encrypted SMS.</string>
+    <string name="sms_receiver_new_encrypted_fb">New encrypted Facebook message.</string>
+    <string name="sms_receiver_new_encrypted_mail">New encrypted E-mail.</string>
+    <string name="settings_mail_pull_intervall">Synchronization interval</string>
+    <string name="settings_mail_notification_mail_pull_sum">Please specify in what interval the incoming server should be queried for mails.</string>
+    
+    <string name="sms_receiver_handshake_received">Has initiated a key exchange with you.</string>
+    <string name="main_cant_decr_message">Message could not be decrypted.</string>
+    <string name="register_pass_change_ok">Password successfully changed!</string>
+    <string name="main_sidebar_head_messages">Messages</string>
+    <string name="main_sidebar_head_general">General</string>
+    <string name="ic_action_device_access_call">Call</string>
+    <string name="main_sidebar_sms">SMS messages</string>
+    <string name="main_sidebar_facebook">Facebook messages</string>
+    <string name="main_sidebar_mail">E-Mail Incoming</string>
+    <string name="main_sidebar_mail_out">E-Mail Outgoing</string>
+    
+    <string name="main_sidebar_settings">Settings</string>
+    <string name="main_sidebar_debug">Debug</string>
+    <string name="main_sidebar_about">About</string>
+    <string name="message_activity_write_message_hint">Write a message</string>
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
+    <string name="no_qr_dialog_message">No QR reader was found on the device. Would like to launch the PlayStore and install one?</string>
+    <string name="handshake_message">Encryption has been initiated.</string>
+    <string name="fb_is_writing">is typing...</string>
+    <string name="fb_is_writing_group">Someone is typing...</string>
+    <string name="message_seen">Seen</string>
+    <string name="fb_notification_new_image">Has sent you a picture.</string>
+    <string name="login_hint_unlock_password">Unlock password</string>
+    <string name="login_been_disabled_for">Logging in has been disabled for two minutes!</string>
+    <string name="login_enter_password_to_unlock">Please enter your password to unlock.</string>
+    <string name="register_activity_please_enter_password">Change password</string>
+    <string name="qr_exchange_create">Create QR code</string>
+    <string name="qr_exchange_read">Read QR code</string>
+    <string name="qr_exchange_auto">Automatic</string>
+    <string name="qr_exchange_text_expert">For advanced users:</string>
+    <string name="qr_exchange_text_recommended">Recommended:</string>
+    <string name="key_overview_looks_same">If the image	is the same on both devices, your communication is secure with a percentage of 200.</string>
+    <string name="key_overview_creation_date">Date created:</string>
+    <string name="key_overview_algorithm">Algorithm:</string>
+    <string name="action_key_information">Key information</string>
+    <string name="title_activity_key_information">Key informationen</string>
+    <string name="message_overview_date_today">Today</string>
+    <string name="message_handshake_initiated">The key exchange has been initiated. Waiting for partners confirmation.</string>
+    <string name="message_handshake_completed">Key exchange completed. You can now communicate securely.</string>
+    <string name="ic_action_content_reply">Reply</string>
+    <string name="mail_new_send_to">To</string>
+    <string name="mail_new_subject">Subject</string>
+    <string name="mail_new_body">Write E-Mail</string>
+    <string name="title_activity_new_mail">New E-Mail</string>
+    <string name="action_send_mail">Send Mail</string>
+    <string name="mail_activity_new_empty_mail">Your E-Mail address is empty or invalid.</string>
+    <string name="mail_activity_handshake_mail_subject">Has initiated a key exchange with you.</string>
+    <string name="settings_mail_logout">Log out</string>
+    <string name="settings_logout_mail_done">You have been logged out of your E-Mail account!</string>
+    <string name="settings_logout_fb_done">You have been logged out of your Facebook account!</string>
+    <string name="settings_fb_image_clear_cache">Cache has been emptied!</string>
+    <string name="activity_mail_enter_more_information">More information are required for this account.</string>
+    <string name="activity_key_overview_delete_key">Delete key</string>
+    <string name="activity_keyinformation_delete_key_dialog">Are you sure you really to delete the key? All encrypted messages so far will be irreversibly gone.</string>
+    <string name="activity_keyinformation_delete_key_done">The key has been deleted.</string>
+      <string name="title_activity_new_message">Contacts</string>
+      
+       <string name="snackbar_cannot_load_fb_contacts">Contacts could not be loaded.</string>
+       <string name="snackbar_cannot_load_mails">Your E-Mails could not be retrieved.</string>
+        <string name="snackbar_wrong_password">Wrong password!</string>
+        <string name="snackbar_wrong_password_attempts_left">attempts remaining.</string>
+		<string name="snackbar_retry">Retry</string>
+		<string name="activity_register_register_button">Register</string>
+
+		<string name="settings_sms_notification_all_sms">All SMS messages</string>
+		<string name="settings_sms_notification_all_sms_sum">When deactivated, you will only be notified upon receiving encrypted messages.</string>
+		<string name="settings_fb_notification_all_fb">Alle FB messages</string>
+		<string name="settings_fb_notification_all_fb_sum">When deactivated, you will only be notified upon receiving encrypted messages.</string>
+		
+		<string name="settings_mail_notification_mail">E-Mail</string>
+		<string name="settings_mail_notification_all_mail">All E-Mails</string>
+		<string name="settings_mail_notification_all_mail_sum">When deactivated, you will only be notified upon receiving encrypted messages.</string>
+		
+	<string name="popup_dh_key_already_mapped">An exchange has already been initiated. Your partner might still have to accept it. Continue anyway?</string>
+	<string name="exchange_qr_create_note">Never use the same QR code for more than one communication partner.</string>
+
+	<string name="your_device_supports_nfc">Your device supports NFC</string>
+	<string name="your_device_supports_nfc2">To do that, hold the devices back-to-back.</string>
+	<string name="welcome">Welcome</string>
+	<string name="register_activity_current_password">Current password</string>
+	<string name="register_activity_new_password1">New password</string>
+	<string name="register_activity_new_password2">New password</string>
+	
+	<string name="settings_headsup">Heads-up messages</string>
+	<string name="mail_send">Sent</string>
+	<string name="register_old_password_incorrect">Your password is incorrect.</string>
+	<string name="register_enter_your_password">Please enter your password.</string>
+	<string name="register_passwords_do_not_match">The passwords do not match.</string>
+	<string name="register_pw_set_done">Password successfully changed.</string>
+	
+	<string name="facebook_login_please_enter_valid_mail">Please enter a valid e-mail address.</string>
+	<string name="facebook_login_please_enter_valid_pw">Please enter a valid password.</string>
+	<string name="facebook_login_incorrect_or_offline">Something went wrong, please verify your login information.</string>
+	<string name="settings_advanced_key_share">NFC and QR</string>
+	<string name="settings_default_sms">Default SMS</string>
+	<string name="settings_default_sms_sum">Use Raven as default messenger.</string>
+	
+    <!-- Nicht übersetzten! Do not translate! -->
+    <drawable name="nav_white">#F3F3F3</drawable>
+    <drawable name="nav_blue">#175ea2</drawable>
+ <!-- Legacy 4FA6E9 Legacy Legacy #33B5E5 -->
+
+    <string name="title_activity_smsdefault_delivery">SMSDefaultDelivery</string>
+
+</resources>
