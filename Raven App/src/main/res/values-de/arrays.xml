@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+    <string-array name="profile_picture_from_values" tools:ignore="MissingTranslation">
+        <item name="1">1</item>
+        <item name="2">2</item>
+    </string-array>
+    
+    
+    
+    <string-array name="theme" tools:ignore="MissingTranslation">
+        <item name="1">Blue</item>
+        <item name="2">White</item>
+    </string-array>
+    <string-array name="theme_values" tools:ignore="MissingTranslation">
+        <item name="1">1</item>
+        <item name="2">2</item>
+    </string-array>
+    
+    
+    
+    
+    
+     <string-array name="noti_light">
+        <item name="1">Blau</item>
+        <item name="2">Cyan</item>
+        <item name="3">Grün</item>
+        <item name="4">Magenta</item>
+        <item name="5">Rot</item>
+        <item name="6">Weiß</item>
+        <item name="7">Gelb</item>
+    </string-array>
+    <string-array name="noti_light_values">
+        <item name="1">-16776961</item>
+        <item name="2">-16711681</item>
+        <item name="3">-16711936</item>
+        <item name="4">-65281</item>
+        <item name="5">-65536</item>
+        <item name="6">-1</item>
+        <item name="7">-256</item>
+    </string-array>
+    
+    <string-array name="mail_pull_intervall_names">
+        <item name="1">10 Min</item>
+        <item name="2">15 Min</item>
+        <item name="3">30 Min</item>
+        <item name="4">1 Stunden</item>
+        <item name="5">2 Stunden</item>
+        <item name="6">4 Stunden</item>
+        <item name="7">8 Stunden</item>
+    </string-array>
+    <string-array name="mail_pull_intervall_data">
+    <item name="1">600000</item>
+    <item name="2">1200000</item>
+    <item name="3">1800000</item>
+    <item name="4">2600000</item>
+    <item name="5">7200000</item>
+    <item name="6">14400000</item>
+    <item name="7">28800000</item>
+    
+	</string-array>
+    
+</resources>

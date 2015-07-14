@@ -1,0 +1,45 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 22
+    buildToolsVersion "22"
+
+    defaultConfig {
+        applicationId "at.flack"
+        minSdkVersion 16
+        targetSdkVersion 22
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+}
+
+dependencies {
+    compile 'com.android.support:appcompat-v7:22.2.0'
+    compile files('libs/activation.jar')
+    compile files('libs/additionnal.jar')
+    compile files('libs/android-async-http-1.4.6.jar')
+    compile files('libs/core-1.51.0.0.jar')
+    compile files('libs/flack_core.jar')
+
+    compile files('libs/jsoup-1.7.3.jar')
+    compile files('libs/mail.jar')
+    compile files('libs/prov-1.51.0.0.jar')
+    compile 'com.google.android.gms:play-services-analytics:7.5.0'
+
+    compile (project(':emojicon')){
+        exclude module: 'support-v4'
+    }
+    compile (project(':fab')){
+        exclude module: 'support-v4'
+        exclude group: 'com.nineoldandroids', module: 'library'
+    }
+    compile (project(':material')){
+        exclude group: 'com.nineoldandroids', module: 'library'
+    }
+    compile 'com.google.zxing:core:3.0.1'
+}
