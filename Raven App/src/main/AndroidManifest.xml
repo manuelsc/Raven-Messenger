@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="at.flack"
-    android:versionCode="16"
-    android:versionName="1.1507141" >
+    android:versionCode="20"
+    android:versionName="1.1601301" >
 
     <uses-sdk
         android:minSdkVersion="16"
@@ -112,24 +112,7 @@
                 <data android:mimeType="application/vnd.com.example.android.beam" />
             </intent-filter>
         </activity>
-        <activity
-            android:name="at.flack.activity.QRCreator"
-            android:configChanges="keyboardHidden|orientation"
-            android:label="@string/title_activity_qr_erstellen"
-            android:parentActivityName=".activity.QRActivity" >
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value="at.flack.intents.QRActivity" />
-        </activity>
-        <activity
-            android:name="at.flack.activity.QRReader"
-            android:configChanges="keyboardHidden|orientation"
-            android:label="@string/title_activity_qr_lesen"
-            android:parentActivityName=".activity.QRActivity" >
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value="at.flack.intents.QRActivity" />
-        </activity>
+
         <activity
             android:name=".activity.DebugActivity"
             android:configChanges="keyboardHidden|orientation"

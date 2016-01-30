@@ -21,23 +21,6 @@
 
 package at.flack;
 
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.io.ObjectInputStream;
-import java.io.ObjectOutputStream;
-import java.io.StreamCorruptedException;
-import java.nio.charset.Charset;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.concurrent.ExecutionException;
-
-import mail.Email;
-import mail.MailControlAndroid;
-import mail.MailProfile;
-import safe.KeyEntity;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.Fragment;
@@ -63,7 +46,6 @@ import android.provider.ContactsContract;
 import android.provider.ContactsContract.PhoneLookup;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
-import android.support.v7.app.ActionBarActivity;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
@@ -74,6 +56,23 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
+
+import com.google.android.gms.analytics.HitBuilders;
+import com.google.android.gms.analytics.Tracker;
+
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
+import java.io.StreamCorruptedException;
+import java.nio.charset.Charset;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.concurrent.ExecutionException;
+
 import api.ChatAPI;
 import api.FacebookContact;
 import at.flack.GoogleAnalyticsTrack.TrackerName;
@@ -91,13 +90,13 @@ import at.flack.ui.RoundedImageView;
 import at.flack.utils.HandshakeProcessor;
 import at.flack.utils.NotificationService;
 import at.flack.utils.UpdateProcessor;
-
-import com.google.android.gms.analytics.HitBuilders;
-import com.google.android.gms.analytics.Tracker;
-
 import encryption.Base64;
 import encryption.Message;
 import exceptions.MessageDecrypterException;
+import mail.Email;
+import mail.MailControlAndroid;
+import mail.MailProfile;
+import safe.KeyEntity;
 
 public class MainActivity extends AppCompatActivity {
 	private DrawerLayout mDrawerLayout;
@@ -105,7 +104,7 @@ public class MainActivity extends AppCompatActivity {
 	private ActionBarDrawerToggle mDrawerToggle;
 
 	private CharSequence mTitle;
-	private final String VERSION = "15.04.24.1";
+	private final String VERSION = "16.01.30.1";
 
 	private static int current_fragment = -1;
 	private SharedPreferences sharedPrefs;
@@ -379,7 +378,7 @@ public class MainActivity extends AppCompatActivity {
 			if (tMgr != null) {
 				String temp = getContactName(this, tMgr.getLine1Number());
 				String name = (temp != null) ? temp : tMgr.getLine1Number();
-				if (name.equals(tMgr.getLine1Number()) && fb_api != null && fb_api.getName() != null)
+				if (name != null && name.equals(tMgr.getLine1Number()) && fb_api != null && fb_api.getName() != null)
 					name = fb_api.getName();
 				sharedPrefs.edit().putString("username", name).apply();
 			}
@@ -602,7 +601,7 @@ public class MainActivity extends AppCompatActivity {
 	}
 
 	public NdefRecord createMimeRecord(String mimeType, byte[] payload) {
-		byte[] mimeBytes = mimeType.getBytes(Charset.forName("USASCII"));
+		byte[] mimeBytes = mimeType.getBytes(Charset.forName("US-ASCII"));
 		NdefRecord mimeRecord = new NdefRecord(NdefRecord.TNF_MIME_MEDIA, mimeBytes, new byte[0], payload);
 		return mimeRecord;
 	}
@@ -753,7 +752,7 @@ public class MainActivity extends AppCompatActivity {
 			ArrayList<FacebookContact> temp = null;
 			try {
 				fb_api = new ChatAPI(loadCookie(), 0); // 0 for android smileys
-			} catch (IOException e) {
+			} catch (Exception e) {
 				this.exception = e;
 				e.printStackTrace();
 			}
@@ -771,7 +770,7 @@ public class MainActivity extends AppCompatActivity {
 				fb_api = new ChatAPI(params[0], params[1], 0);
 				saveCookie(fb_api.getCookie());
 				return true;
-			} catch (IOException e) {
+			} catch (Exception e) {
 				this.exception = e;
 				e.printStackTrace();
 			}
@@ -813,7 +812,7 @@ public class MainActivity extends AppCompatActivity {
 					}
 				});
 
-			} catch (IOException | StringIndexOutOfBoundsException e) {
+			} catch (Exception e) {
 				this.exception = e;
 				e.printStackTrace();
 			}

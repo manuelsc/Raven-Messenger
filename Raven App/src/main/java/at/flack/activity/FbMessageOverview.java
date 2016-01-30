@@ -21,28 +21,6 @@
 
 package at.flack.activity;
 
-import hash.BLAKE512;
-
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.IOException;
-import java.io.ObjectInputStream;
-import java.io.StreamCorruptedException;
-import java.net.URLDecoder;
-import java.security.InvalidAlgorithmParameterException;
-import java.security.InvalidKeyException;
-import java.security.NoSuchAlgorithmException;
-import java.security.NoSuchProviderException;
-import java.security.spec.InvalidKeySpecException;
-import java.text.SimpleDateFormat;
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.Locale;
-import java.util.concurrent.ExecutionException;
-
-import json.JSONException;
-import safe.KeyEntity;
 import android.app.NotificationManager;
 import android.content.Context;
 import android.content.Intent;
@@ -76,6 +54,32 @@ import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.gc.materialdesign.widgets.Dialog;
+import com.google.android.gms.analytics.HitBuilders;
+import com.google.android.gms.analytics.Tracker;
+import com.rockerhieu.emojicon.EmojiconGridFragment;
+import com.rockerhieu.emojicon.EmojiconsFragment;
+import com.rockerhieu.emojicon.emoji.Emojicon;
+
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.StreamCorruptedException;
+import java.net.URLDecoder;
+import java.security.InvalidAlgorithmParameterException;
+import java.security.InvalidKeyException;
+import java.security.NoSuchAlgorithmException;
+import java.security.NoSuchProviderException;
+import java.security.spec.InvalidKeySpecException;
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.Locale;
+import java.util.concurrent.ExecutionException;
+
 import api.ChatAPI;
 import api.CurrentTyping;
 import api.FacebookContact;
@@ -99,19 +103,14 @@ import at.flack.utils.ImageDownloader;
 import at.flack.utils.ImageManager;
 import at.flack.utils.ImageUrlChecker;
 import at.flack.utils.NotificationService;
-
-import com.gc.materialdesign.widgets.Dialog;
-import com.google.android.gms.analytics.HitBuilders;
-import com.google.android.gms.analytics.Tracker;
-import com.rockerhieu.emojicon.EmojiconGridFragment;
-import com.rockerhieu.emojicon.EmojiconsFragment;
-import com.rockerhieu.emojicon.emoji.Emojicon;
-
 import encryption.Base64;
 import encryption.Message;
 import exceptions.KeyAlreadyMappedException;
 import exceptions.MessageEncrypterException;
 import exchange.ECDHExchange;
+import hash.BLAKE512;
+import json.JSONException;
+import safe.KeyEntity;
 
 public class FbMessageOverview extends NFCActionBarActivity implements EmojiconGridFragment.OnEmojiconClickedListener,
 		EmojiconsFragment.OnEmojiconBackspaceClickedListener {
@@ -595,9 +594,9 @@ public class FbMessageOverview extends NFCActionBarActivity implements EmojiconG
 		}
 	}
 
-	public void fillListWithMessages(int page, boolean clearfirst) throws Exception {
+	public void fillListWithMessages(int page, boolean clearfirst, long time) throws Exception {
 		try {
-			getFbMessages(tid, page, clearfirst);
+			getFbMessages(tid, page, clearfirst, time);
 		} catch (InterruptedException e) {
 			e.printStackTrace();
 			return;
@@ -669,7 +668,13 @@ public class FbMessageOverview extends NFCActionBarActivity implements EmojiconG
 	public void loadMore() {
 		page++;
 		try {
-			fillListWithMessages(page, false);
+			if(temp != null && temp.size() > 1) {
+				//Log.d("timeisprecious","works | "+((FacebookMessage)temp.get(0)).getTime()+" | "+((FacebookMessage)temp.get(0)).getMessage());
+				fillListWithMessages(page, false, ((FacebookMessage)temp.get(0)).getTime());
+			}else {
+				//Log.d("timeisprecious","current");
+				fillListWithMessages(page, false, System.currentTimeMillis());
+			}
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -684,7 +689,7 @@ public class FbMessageOverview extends NFCActionBarActivity implements EmojiconG
 			try {
 				if (messages_array != null && params[0].clearfirst)
 					messages_array = new ArrayList<MessageModel>();
-				temp = params[0].api.parseMessages(params[0].api.getMessages(params[0].tid, params[0].page));
+				temp = params[0].api.parseMessages(params[0].api.getMessages(params[0].tid, params[0].page, params[0].time));
 
 			} catch (IOException | JSONException e) {
 				this.exception = e;
@@ -716,7 +721,7 @@ public class FbMessageOverview extends NFCActionBarActivity implements EmojiconG
 			try {
 				params[0].api.sendMessage(params[0].message, params[0].id, params[0].tid);
 				bu = true;
-			} catch (IOException e) {
+			} catch (Exception e) {
 				this.exception = e;
 				e.printStackTrace();
 			}
@@ -734,7 +739,7 @@ public class FbMessageOverview extends NFCActionBarActivity implements EmojiconG
 			try {
 				if (MainActivity.fb_api != null)
 					MainActivity.fb_api.changeReadStatus(params[0]);
-			} catch (IOException e) {
+			} catch (Exception e) {
 				this.exception = e;
 				e.printStackTrace();
 			}
@@ -742,9 +747,9 @@ public class FbMessageOverview extends NFCActionBarActivity implements EmojiconG
 		}
 	}
 
-	public void getFbMessages(String tid, int page, boolean clearfirst) throws InterruptedException, ExecutionException {
+	public void getFbMessages(String tid, int page, boolean clearfirst, long time) throws InterruptedException, ExecutionException {
 		new FacebookMessageTask().executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR, new Container(MainActivity.fb_api,
-				tid, page, clearfirst));
+				tid, page, clearfirst, time));
 	}
 
 	public void sendFbMessage(String message, String id, String tid) throws InterruptedException, ExecutionException {
@@ -1102,7 +1107,7 @@ public class FbMessageOverview extends NFCActionBarActivity implements EmojiconG
 
 		page = 0;
 		try {
-			fillListWithMessages(0, true);
+			fillListWithMessages(0, true, System.currentTimeMillis());
 		} catch (Exception e) {
 			finish();
 		}
@@ -1141,15 +1146,17 @@ class Container {
 	public ChatAPI api;
 	public String tid;
 	public int page;
+	public long time;
 	public String id;
 	String message;
 	public boolean clearfirst;
 
-	public Container(ChatAPI api, String tid, int page, boolean clearfirst) {
+	public Container(ChatAPI api, String tid, int page, boolean clearfirst, long time) {
 		this.api = api;
 		this.tid = tid;
 		this.page = page;
 		this.clearfirst = clearfirst;
+		this.time = time;
 	}
 
 	public Container(ChatAPI api, String message, String id, String tid) {
