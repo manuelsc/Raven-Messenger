@@ -3,7 +3,7 @@ Raven is a free and open source android messenger for Facebook, SMS and E-Mail. 
 Download: https://play.google.com/store/apps/details?id=com.urbapps.raven
 
 # Support
-BTC: 1Ju9G5U4iwJekRvUnG1JDme11vjxJ889Ux
+BTC: 1Ju9G5U4iwJekRvUnG1JDme11vjxJ889Ux  
 ETH: 0x92827C91fc31c15Dd477849627BB23E031601AE0
 
 #Cryptography Notice
